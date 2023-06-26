@@ -1,3 +1,4 @@
+/* Theming */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); /* import font */
 :root{
     --white: #f9f9f9;
@@ -147,33 +148,3 @@ ul{
         margin: 5px;
     }
 }
-.conteudo {
-    width: 100%;
-}
-.rodape {
-    width: 100%;
-    text-align: center;
-    background: rgb(208, 153, 229);
-}
-.img-mobile {
-    width: 100%;
-    
-}
-@media screen and (min-width: 768px) {
-    .menu{
-        height: 100px;
-        background-color: rgb(158, 216, 216);
-    }
-    .conteudo-home{
-        display: flex;
-        padding: 10px;
-    }
-     
-   @media  screen and (min-width:1280px) {
-     .menu {
-        height: 150px;
-        background-color: rgb(100, 100, 189);
-     }
-   }
-        
-    }
