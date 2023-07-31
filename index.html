@@ -1,69 +1,231 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>drogas</title>
-    <link rel="stylesheet" href="drogas.css">
-</head>
-<body>
-    <header class="header">
+/* Theming */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); /* import font */
+:root{
+    --white: #f9f9f9;
+    --black: #1f1f21;
+    --gray: #877979;
+} /* variables*/
 
-        <a href="menu.html" class="logo"><img id="logo" src="naodrogas1.png" alt=""></a>
-        <!-- Hamburger icon -->
-        <input class="side-menu" type="checkbox" id="side-menu"/>
-        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-        <!-- Menu -->
-      <nav class="nav">
-        <ul class="menu">
-            <li><a href="#">Link 01</a></li>
-            <li><a href="#">Link 02</a> </li>
-            <li><a href="#">Sobre</a></li>
-        </ul>
-      </nav>
-    </header>
-    <section class="conteudo">
-        <div class="geral">
-            <div class="img-drogas"></div>
-            <img src="drogas.jpeg" alt="">
-        <div class="definição"></div>
-            <h1>Drogas</h1>
-         <p>Deacordo com a wikipedia (Visite: <a href="https://brasilescola.uol.com.br/drogas"></a>Drogas)</p>
-            <p>Drogas são toda e qualquer substância capaz de alterar as funções fisiológicas ou psicobiológicas de um organismo. Dessa maneira, um analgésico ou 
-            um antiácido, frequentemente tomados para melhorar mal-estar, também são considerados drogas. Entretanto, o termo “drogas” é comumente usado para 
-            definir as substâncias ilícitas, ligadas ao tráfico e ao mundo do crime. Apesar de não estar errado, definir como drogas apenas essas substâncias é
-            uma abordagem ingênua.
-            É possível observar que boa parte das drogas é legalizada e usada na medicina para tratar os mais variados tipos de doenças.
-            No entanto, algumas delas geram polêmica por causar dependência. No Brasil, há uma grande quantidade de drogas proibidas, 
-            mesmo que sejam para tratamento médico.</p></a>
-    </div>
-        <div class="item1">
-            conteúdo 01
-        </div>
-        <div class="item2">
-            conteúdo 02
-        </div>
-        <div class="item3">
-            conteúdo 03
-        </div>
-        <div class="item4">
-            conteúdo 04
-        </div>
-        <div class="item5">
-            conteúdo 05
-        </div>
-        <div class="item6">
-            conteúdo 06
-        </div>
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
 
-    </section>
+/* Header */
+.header{
+    background-color: var(--black);
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    position: sticky;
+    top: 0;
+    width: 100%;"geral geral geral";
+}
+/* Logo */
+.logo{
+    display: inline-block;
+    color: var(--white);
+}
 
-    
-    <footer class="rodape">
-      @gastao vidigal
-      segundo F - manha <br>
-      @Anielly- silva
-    </footer>
-</body>
-</html>
+#logo {
+    width: 10vh;
+    margin: 5px;
+}
+
+/* Nav menu */
+.nav{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--black);
+    overflow: hidden;
+
+}
+.menu a{
+    display: block;
+    padding: 30px;
+    color: var(--white);
+}
+.menu a:hover{
+    background-color: var(--gray);
+}
+.nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+/* Menu Icon */
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 35px 20px;
+}/* Style label tag */
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(+45deg);
+    top:0;
+}
+.conteudo-drogas {
+    width: calc(100vw - 30px);
+    padding: 10px;
+}
+#img.png {
+    display: none;
+}
+.descrição {
+    width: 100vw;
+}
+
+.rodape {
+    width: 100vw;
+    text-align: center;
+}
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "geral";
+}
+.geral {
+    width: 100vw;
+    grid-area: geral;
+}
+
+@media (min-width: 820px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+
+    }
+
+    .hamb{
+        display: none;
+    }
+
+    #logo {
+        width: 8vh;
+        margin: 8px;
+    }
+    .conteudo-drogas {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "def def";
+    }
+    .img-definição {
+        display: block;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+
+    }
+
+    .hamb{
+        display: none;
+    }
+
+    #logo {
+        width: 16vh;
+        margin: 16vh;
+    }
+    .conteudo {
+        grid-template-columns: 33% 34% 33%;
+        grid-template-areas: "de def def";
+    }
+    .definição {
+        display: flex;
+        text-align: end;
+        height: 30vh;
+        width: 30vw;
+    }
+    .img-definição{
+        display: block;
+        text-align: end;
+        height: 30vh;
+        width: 30vw;
+    }
+    #img.png {
+        display: block;
+        width: 50%;
+
+    }
+
+
+
+}
