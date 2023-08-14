@@ -29,7 +29,7 @@ ul{
     box-shadow: 1px 1px 5px 0px var(--gray);
     position: sticky;
     top: 0;
-    width: 100%;"geral geral geral";
+    width: 100%;
 }
 /* Logo */
 .logo{
@@ -112,35 +112,48 @@ ul{
     top:0;
 }
 .side-menu:checked ~ .hamb .hamb-line::after {
-    transform: rotate(+45deg);
+    transform: rotate(45deg);
     top:0;
 }
-.conteudo-drogas {
-    width: calc(100vw - 30px);
-    padding: 10px;
+.conteudo{
+    width: 100vw;
+    display: grid;
 }
-#img.png {
-    display: none;
+.definicao {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
 }
-.descrição {
+#droga {
+    display: block;
+    width: 90%;
+}
+.geral{
     width: 100vw;
 }
 
 .rodape {
     width: 100vw;
     text-align: center;
+    color: #110f0f;
+    background-color: rgb(148, 98, 182);
 }
 
-.conteudo {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-areas: "geral";
-}
 .geral {
     width: 100vw;
-    grid-area: geral;
+    grid-area: "geral";
 }
 
+div[class^="item-"]{
+    background-color: rgb(174, 127, 196);
+    height: 200px;
+    margin: 5px;
+    grid-area: "info";
+}
+.info {
+    display: grid;
+}
 @media (min-width: 820px) {
     .nav{
         max-height: none;
@@ -164,18 +177,48 @@ ul{
     }
 
     #logo {
-        width: 8vh;
-        margin: 8px;
+        width: 15vh;
+        margin: 5px;
     }
-    .conteudo-drogas {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-areas: "def def";
+    .geral {
+        width: 70vw;
     }
-    .img-definição {
+    .item1 {
+        text-align: right;
+    }
+    #droga {
         display: block;
     }
-
+    .info {
+        grid-template-columns: 50% 50%;
+        grid-area: "info" "info";
+    }
+    .definicao {
+        flex-direction: row;
+    }
+}
+.tabela{
+    display: grid;
+}
+.titulo{
+    background-color: blue;
+    color: white;
+    grid-area: t;
+    
+}
+.col1{
+    background-color: azure;
+    text-align: right;
+    padding-right: 5px;
+    border-style: dotted;
+    border-color: black;
+    border-width:1px;
+}
+.col2{
+    background-color: beige;
+    border-style: dotted;
+    border-color: black;
+    border-width: 1px;
 }
 
 @media (min-width: 1024px) {
@@ -201,31 +244,12 @@ ul{
     }
 
     #logo {
-        width: 16vh;
-        margin: 16vh;
+        width: 15vh;
+        margin: 5px;
     }
-    .conteudo {
+    .info {
         grid-template-columns: 33% 34% 33%;
-        grid-template-areas: "de def def";
+        grid-area:  "info" "info" "info";
     }
-    .definição {
-        display: flex;
-        text-align: end;
-        height: 30vh;
-        width: 30vw;
-    }
-    .img-definição{
-        display: block;
-        text-align: end;
-        height: 30vh;
-        width: 30vw;
-    }
-    #img.png {
-        display: block;
-        width: 50%;
-
-    }
-
-
 
 }
