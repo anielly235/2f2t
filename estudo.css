@@ -2,46 +2,59 @@
     margin: 0;
     padding: 0;
 }
+
 body {
-    background-color: rgb(163, 243, 199);
+    background-color: rgb(16, 65, 109);
 }
+
 .item {
-    width: 60px;
-    height: 90px;
-    background-color: blue;
-    color: black;
+    width: 15%;
+    height: 100px;
+    background-color: rgb(206, 225, 241);
     margin: 10px;
+
 }
+
+
 .conteudo {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-
 }
+
+
 .barra {
-    border-color: rgb(3, 255, 255);
-    height: 20vh;
+    background-color: rgb(152, 128, 219);
+    height: 10vh;
     grid-area: barra;
 }
-.principal{
-    background-color: rgb(206, 173, 112);
-    height: 60vh;
-    grid-area: principal;
-}
-.lado {
-    background-color: rgb(123, 158, 223);
+
+
+
+.lado{
+    background-color: rgb(86, 28, 139);
     height: 80vh;
     grid-area: lado;
 }
+
+.principal{
+    background-color: rgb(50, 18, 71);
+    height: 80vh;
+    grid-area: principal;
+}
+
 .rodape {
-    background-color: rgb(185, 118, 206);
-    height: 20vh;
+    background-color: rgb(199, 176, 221);
+    height: 10vh;
     grid-area: rodape;
 }
+
 .meu-site {
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-areas: 
                     "barra barra"
                     "lado principal"
-                    "lado rodape";
+                    "rodape rodape";
+
+
 }
